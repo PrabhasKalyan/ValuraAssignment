@@ -1,0 +1,11 @@
+{
+  "user_id": "usr_004",
+  "name": "Jamie Patel",
+  "age": 31,
+  "country": "US",
+  "base_currency": "USD",
+  "kyc": {"status": "verified"},
+  "risk_profile": "moderate",
+  "positions": [],
+  "preferences": {"preferred_benchmark": "S&P 500"}
+}

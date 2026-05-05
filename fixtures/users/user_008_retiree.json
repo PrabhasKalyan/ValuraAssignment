@@ -1,0 +1,19 @@
+{
+  "user_id": "usr_008",
+  "name": "Eleanor Ross",
+  "age": 68,
+  "country": "US",
+  "base_currency": "USD",
+  "kyc": {"status": "verified"},
+  "risk_profile": "conservative",
+  "positions": [
+    {"ticker": "JNJ",  "exchange": "NYSE",   "quantity": 220, "avg_cost": 142.80, "currency": "USD", "purchased_at": "2018-08-10"},
+    {"ticker": "PG",   "exchange": "NYSE",   "quantity": 180, "avg_cost": 92.40,  "currency": "USD", "purchased_at": "2018-11-05"},
+    {"ticker": "KO",   "exchange": "NYSE",   "quantity": 350, "avg_cost": 45.20,  "currency": "USD", "purchased_at": "2019-02-18"},
+    {"ticker": "VYM",  "exchange": "NYSE",   "quantity": 280, "avg_cost": 92.20,  "currency": "USD", "purchased_at": "2021-03-04"},
+    {"ticker": "SCHD", "exchange": "NYSE",   "quantity": 350, "avg_cost": 68.40,  "currency": "USD", "purchased_at": "2021-06-18"},
+    {"ticker": "BND",  "exchange": "NASDAQ", "quantity": 240, "avg_cost": 82.10,  "currency": "USD", "purchased_at": "2021-09-22"},
+    {"ticker": "TLT",  "exchange": "NASDAQ", "quantity": 180, "avg_cost": 142.30, "currency": "USD", "purchased_at": "2022-02-08"}
+  ],
+  "preferences": {"preferred_benchmark": "S&P 500", "income_focus": true}
+}

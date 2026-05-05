@@ -1,0 +1,57 @@
+{
+  "session_id": "sess_followup_001",
+  "user_id": "usr_001",
+  "description": "Tests follow-up resolution. Each test case gives prior user turns + a current turn to classify. Your classifier must carry context (entity, intent) appropriately.",
+  "test_cases": [
+    {
+      "case_id": "fu_01",
+      "prior_user_turns": ["What's happening with Nvidia this week?"],
+      "current_user_turn": "How much do I own?",
+      "expected": {
+        "agent": "portfolio_query",
+        "entities": {"tickers": ["NVDA"]},
+        "_carryover": "ticker NVDA from prior turn"
+      }
+    },
+    {
+      "case_id": "fu_02",
+      "prior_user_turns": [
+        "What's happening with Nvidia this week?",
+        "How much do I own?"
+      ],
+      "current_user_turn": "Should I sell some?",
+      "expected": {
+        "agent": "investment_strategy",
+        "entities": {"tickers": ["NVDA"], "action": "sell"},
+        "_carryover": "ticker still NVDA"
+      }
+    },
+    {
+      "case_id": "fu_03",
+      "prior_user_turns": [
+        "What's happening with Nvidia this week?",
+        "How much do I own?",
+        "Should I sell some?"
+      ],
+      "current_user_turn": "what about AMD?",
+      "expected": {
+        "agent": "market_research",
+        "entities": {"tickers": ["AMD"]},
+        "_carryover": "intent (market activity) carried; ticker switched"
+      }
+    },
+    {
+      "case_id": "fu_04",
+      "prior_user_turns": [
+        "What's happening with Nvidia this week?",
+        "what about AMD?"
+      ],
+      "current_user_turn": "compare them",
+      "expected": {
+        "agent": "market_research",
+        "entities": {"tickers": ["NVDA", "AMD"], "intent": "comparison"},
+        "_carryover": "both tickers from prior turns"
+      }
+    }
+  ]
+}

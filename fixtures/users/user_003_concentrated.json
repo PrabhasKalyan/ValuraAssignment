@@ -1,0 +1,17 @@
+{
+  "user_id": "usr_003",
+  "name": "Marcus Webb",
+  "age": 35,
+  "country": "US",
+  "base_currency": "USD",
+  "kyc": {"status": "verified"},
+  "risk_profile": "moderate",
+  "positions": [
+    {"ticker": "NVDA", "exchange": "NASDAQ", "quantity": 180, "avg_cost": 218.40, "currency": "USD", "purchased_at": "2023-04-12"},
+    {"ticker": "VTI",  "exchange": "NYSE",   "quantity": 25,  "avg_cost": 218.50, "currency": "USD", "purchased_at": "2023-07-04"},
+    {"ticker": "VXUS", "exchange": "NASDAQ", "quantity": 30,  "avg_cost": 56.10,  "currency": "USD", "purchased_at": "2023-09-01"},
+    {"ticker": "BND",  "exchange": "NASDAQ", "quantity": 20,  "avg_cost": 72.30,  "currency": "USD", "purchased_at": "2024-01-15"},
+    {"ticker": "AAPL", "exchange": "NASDAQ", "quantity": 8,   "avg_cost": 168.20, "currency": "USD", "purchased_at": "2024-05-20"}
+  ],
+  "preferences": {"preferred_benchmark": "S&P 500"}
+}

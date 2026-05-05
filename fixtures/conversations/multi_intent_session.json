@@ -1,0 +1,50 @@
+{
+  "session_id": "sess_multiintent_001",
+  "user_id": "usr_006",
+  "description": "User switches topics across turns. Classifier must NOT carry context inappropriately — each current turn here is a clean topic switch from the prior thread.",
+  "test_cases": [
+    {
+      "case_id": "mi_01",
+      "prior_user_turns": [],
+      "current_user_turn": "How is my portfolio doing?",
+      "expected": {
+        "agent": "portfolio_health",
+        "entities": {}
+      }
+    },
+    {
+      "case_id": "mi_02",
+      "prior_user_turns": ["How is my portfolio doing?"],
+      "current_user_turn": "What's the difference between dollar cost averaging and lump-sum investing?",
+      "expected": {
+        "agent": "general_query",
+        "entities": {"topics": ["DCA", "lump-sum"]},
+        "_carryover": "none — clean topic switch"
+      }
+    },
+    {
+      "case_id": "mi_03",
+      "prior_user_turns": [
+        "How is my portfolio doing?",
+        "What's the difference between dollar cost averaging and lump-sum investing?"
+      ],
+      "current_user_turn": "Calculate how much I'd have in 10 years investing 2000 USD a month at 8% return",
+      "expected": {
+        "agent": "financial_calculator",
+        "entities": {"amount": 2000, "currency": "USD", "period_years": 10, "rate": 0.08, "frequency": "monthly"}
+      }
+    },
+    {
+      "case_id": "mi_04",
+      "prior_user_turns": [
+        "How is my portfolio doing?",
+        "Calculate how much I'd have in 10 years investing 2000 USD a month at 8% return"
+      ],
+      "current_user_turn": "tell me about ASML",
+      "expected": {
+        "agent": "market_research",
+        "entities": {"tickers": ["ASML"]}
+      }
+    }
+  ]
+}

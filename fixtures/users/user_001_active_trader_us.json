@@ -1,0 +1,21 @@
+{
+  "user_id": "usr_001",
+  "name": "Alex Chen",
+  "age": 28,
+  "country": "US",
+  "base_currency": "USD",
+  "kyc": {"status": "verified"},
+  "risk_profile": "aggressive",
+  "positions": [
+    {"ticker": "AAPL",  "exchange": "NASDAQ", "quantity": 60, "avg_cost": 142.30, "currency": "USD", "purchased_at": "2023-08-04"},
+    {"ticker": "MSFT",  "exchange": "NASDAQ", "quantity": 40, "avg_cost": 305.10, "currency": "USD", "purchased_at": "2023-09-01"},
+    {"ticker": "NVDA",  "exchange": "NASDAQ", "quantity": 35, "avg_cost": 412.85, "currency": "USD", "purchased_at": "2023-11-15"},
+    {"ticker": "GOOGL", "exchange": "NASDAQ", "quantity": 25, "avg_cost": 132.40, "currency": "USD", "purchased_at": "2023-10-22"},
+    {"ticker": "META",  "exchange": "NASDAQ", "quantity": 20, "avg_cost": 298.50, "currency": "USD", "purchased_at": "2023-12-01"},
+    {"ticker": "AMZN",  "exchange": "NASDAQ", "quantity": 30, "avg_cost": 138.20, "currency": "USD", "purchased_at": "2024-01-08"},
+    {"ticker": "TSLA",  "exchange": "NASDAQ", "quantity": 22, "avg_cost": 245.60, "currency": "USD", "purchased_at": "2024-02-14"},
+    {"ticker": "AMD",   "exchange": "NASDAQ", "quantity": 50, "avg_cost": 118.90, "currency": "USD", "purchased_at": "2024-01-22"},
+    {"ticker": "QQQ",   "exchange": "NASDAQ", "quantity": 30, "avg_cost": 412.40, "currency": "USD", "purchased_at": "2024-11-22"}
+  ],
+  "preferences": {"preferred_benchmark": "QQQ"}
+}

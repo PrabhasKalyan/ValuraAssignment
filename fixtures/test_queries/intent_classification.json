@@ -1,0 +1,104 @@
+{
+  "description": "Gold-standard labeled queries. Your classifier's routing decision must match expected_agent. Entity matching is subset + normalized (see fixtures/README.md for matching rules).",
+  "agent_taxonomy": {
+    "portfolio_health":      "structured assessment of the user's portfolio (concentration, performance, benchmarking, observations)",
+    "market_research":       "factual/recent info about an instrument, sector, or market event",
+    "investment_strategy":   "advice/strategy questions: should I buy/sell/rebalance, allocation guidance",
+    "financial_planning":    "long-term planning: retirement, goals, savings rate",
+    "financial_calculator":  "deterministic numerical computation: DCA returns, mortgage, tax, future value, FX conversion",
+    "risk_assessment":       "risk metrics, exposure analysis, what-if scenarios",
+    "product_recommendation":"recommend specific products/funds matching user profile",
+    "predictive_analysis":   "forward-looking analysis: forecasts, trend extrapolation",
+    "customer_support":      "platform issues, account questions, how-to-use-app",
+    "general_query":         "educational, conversational, definitions, greetings"
+  },
+  "entity_vocabulary": {
+    "tickers":      "array of strings, uppercase, exchange-suffixed where relevant (AAPL, ASML.AS, 7203.T)",
+    "amount":       "number, in the unit of `currency`",
+    "currency":     "ISO 4217 string (USD, EUR, GBP, JPY)",
+    "rate":         "decimal (0.08 for 8%)",
+    "period_years": "integer",
+    "frequency":    "one of: daily, weekly, monthly, yearly",
+    "horizon":      "string token (6_months, 1_year, 5_years)",
+    "time_period":  "string token (today, this_week, this_month, this_year)",
+    "topics":       "array of strings",
+    "sectors":      "array of strings",
+    "index":        "string (S&P 500, FTSE 100, NIKKEI 225, MSCI World)",
+    "action":       "one of: buy, sell, hold, hedge, rebalance",
+    "goal":         "one of: retirement, education, house, FIRE, emergency_fund"
+  },
+  "queries": [
+    {"query": "hi",                                                            "expected_agent": "general_query",        "expected_entities": {}},
+    {"query": "hello",                                                         "expected_agent": "general_query",        "expected_entities": {}},
+    {"query": "thanks",                                                        "expected_agent": "general_query",        "expected_entities": {}},
+    {"query": "what is a mutual fund?",                                        "expected_agent": "general_query",        "expected_entities": {"topics": ["mutual fund"]}},
+    {"query": "explain compound interest",                                     "expected_agent": "general_query",        "expected_entities": {"topics": ["compound interest"]}},
+    {"query": "what's the difference between an ETF and an index fund?",       "expected_agent": "general_query",        "expected_entities": {"topics": ["ETF", "index fund"]}},
+    {"query": "what does P/E ratio mean?",                                     "expected_agent": "general_query",        "expected_entities": {"topics": ["P/E ratio"]}},
+
+    {"query": "how is my portfolio doing",                                     "expected_agent": "portfolio_health",     "expected_entities": {}},
+    {"query": "give me a health check on my investments",                      "expected_agent": "portfolio_health",     "expected_entities": {}},
+    {"query": "is my portfolio well diversified?",                             "expected_agent": "portfolio_health",     "expected_entities": {}},
+    {"query": "what's my concentration risk?",                                 "expected_agent": "portfolio_health",     "expected_entities": {}},
+    {"query": "am i beating the market?",                                      "expected_agent": "portfolio_health",     "expected_entities": {}},
+    {"query": "review my holdings",                                            "expected_agent": "portfolio_health",     "expected_entities": {}},
+    {"query": "portfolio summary",                                             "expected_agent": "portfolio_health",     "expected_entities": {}},
+
+    {"query": "what's the price of AAPL right now?",                           "expected_agent": "market_research",      "expected_entities": {"tickers": ["AAPL"]}},
+    {"query": "tell me about NVIDIA",                                          "expected_agent": "market_research",      "expected_entities": {"tickers": ["NVDA"]}},
+    {"query": "any news on ASML?",                                             "expected_agent": "market_research",      "expected_entities": {"tickers": ["ASML"]}},
+    {"query": "how is Tesla doing this month?",                                "expected_agent": "market_research",      "expected_entities": {"tickers": ["TSLA"], "time_period": "this_month"}},
+    {"query": "compare HSBC and Barclays",                                     "expected_agent": "market_research",      "expected_entities": {"tickers": ["HSBA.L", "BARC.L"]}},
+    {"query": "what happened in markets today?",                               "expected_agent": "market_research",      "expected_entities": {"time_period": "today"}},
+    {"query": "show me the top gainers in S&P 500",                            "expected_agent": "market_research",      "expected_entities": {"index": "S&P 500"}},
+    {"query": "gold price",                                                    "expected_agent": "market_research",      "expected_entities": {"tickers": ["GOLD"]}},
+    {"query": "EUR/USD rate",                                                  "expected_agent": "market_research",      "expected_entities": {"topics": ["FX"]}},
+    {"query": "how is the FTSE doing?",                                        "expected_agent": "market_research",      "expected_entities": {"index": "FTSE 100"}},
+    {"query": "what's happening with the Nikkei",                              "expected_agent": "market_research",      "expected_entities": {"index": "NIKKEI 225"}},
+
+    {"query": "should i sell my Apple stock?",                                 "expected_agent": "investment_strategy",  "expected_entities": {"tickers": ["AAPL"], "action": "sell"}},
+    {"query": "should i buy more nvidia?",                                     "expected_agent": "investment_strategy",  "expected_entities": {"tickers": ["NVDA"], "action": "buy"}},
+    {"query": "is now a good time to invest in tech?",                         "expected_agent": "investment_strategy",  "expected_entities": {"sectors": ["technology"]}},
+    {"query": "rebalance my portfolio",                                        "expected_agent": "investment_strategy",  "expected_entities": {"action": "rebalance"}},
+    {"query": "what should my equity-bond split be at age 55?",                "expected_agent": "investment_strategy",  "expected_entities": {}},
+    {"query": "should i hedge my USD exposure?",                               "expected_agent": "investment_strategy",  "expected_entities": {"action": "hedge", "currency": "USD"}},
+
+    {"query": "how much should i save for retirement?",                        "expected_agent": "financial_planning",   "expected_entities": {"goal": "retirement"}},
+    {"query": "i want to retire at 50, am i on track?",                        "expected_agent": "financial_planning",   "expected_entities": {"goal": "retirement"}},
+    {"query": "plan for my child's college fund of 200k by 2035",              "expected_agent": "financial_planning",   "expected_entities": {"goal": "education", "amount": 200000}},
+    {"query": "how do i save for a house down payment?",                       "expected_agent": "financial_planning",   "expected_entities": {"goal": "house"}},
+    {"query": "FIRE plan for someone earning 150k a year",                     "expected_agent": "financial_planning",   "expected_entities": {"goal": "FIRE", "amount": 150000}},
+
+    {"query": "if i invest 2500 monthly for 20 years at 8%, what will i have?","expected_agent": "financial_calculator", "expected_entities": {"amount": 2500, "frequency": "monthly", "period_years": 20, "rate": 0.08}},
+    {"query": "calculate mortgage payment for 500k loan at 6.5% for 30 years", "expected_agent": "financial_calculator", "expected_entities": {"amount": 500000, "rate": 0.065, "period_years": 30}},
+    {"query": "what's my long-term capital gains tax on 50k profit in the US?","expected_agent": "financial_calculator", "expected_entities": {"amount": 50000, "topics": ["LTCG"]}},
+    {"query": "future value of 10000 at 8% for 15 years",                      "expected_agent": "financial_calculator", "expected_entities": {"amount": 10000, "rate": 0.08, "period_years": 15}},
+    {"query": "convert 5000 GBP to USD",                                       "expected_agent": "financial_calculator", "expected_entities": {"amount": 5000, "currency": "GBP"}},
+
+    {"query": "what's my downside risk if markets drop 30%?",                  "expected_agent": "risk_assessment",      "expected_entities": {}},
+    {"query": "show me my portfolio's beta",                                   "expected_agent": "risk_assessment",      "expected_entities": {"topics": ["beta"]}},
+    {"query": "what's the max drawdown of my holdings?",                       "expected_agent": "risk_assessment",      "expected_entities": {"topics": ["max drawdown"]}},
+    {"query": "stress test my portfolio against a recession",                  "expected_agent": "risk_assessment",      "expected_entities": {"topics": ["recession"]}},
+    {"query": "how exposed am i to a USD weakening?",                          "expected_agent": "risk_assessment",      "expected_entities": {"currency": "USD"}},
+
+    {"query": "recommend a large cap ETF for me",                              "expected_agent": "product_recommendation","expected_entities": {"topics": ["ETF", "large cap"]}},
+    {"query": "which fund should i buy for emerging market exposure?",         "expected_agent": "product_recommendation","expected_entities": {"topics": ["emerging markets"]}},
+    {"query": "best low-cost world index fund",                                "expected_agent": "product_recommendation","expected_entities": {"topics": ["index fund", "world"]}},
+    {"query": "recommend a dividend ETF",                                      "expected_agent": "product_recommendation","expected_entities": {"topics": ["ETF", "dividend"]}},
+
+    {"query": "where will the S&P 500 be in 6 months?",                        "expected_agent": "predictive_analysis",  "expected_entities": {"index": "S&P 500", "horizon": "6_months"}},
+    {"query": "predict my portfolio value in 5 years",                         "expected_agent": "predictive_analysis",  "expected_entities": {"horizon": "5_years"}},
+
+    {"query": "i can't login to my account",                                   "expected_agent": "customer_support",     "expected_entities": {"topics": ["login"]}},
+    {"query": "how do i change my linked bank account?",                       "expected_agent": "customer_support",     "expected_entities": {"topics": ["bank account"]}},
+    {"query": "where do i see my transaction history?",                        "expected_agent": "customer_support",     "expected_entities": {"topics": ["transaction history"]}},
+    {"query": "my recurring investment didn't go through this month",          "expected_agent": "customer_support",     "expected_entities": {"topics": ["recurring investment"]}},
+
+    {"query": "how is my portfolio doing and what should i sell?",             "expected_agent": "portfolio_health",     "expected_entities": {"action": "sell"}, "_notes": "multi-intent — primary is portfolio_health"},
+    {"query": "tell me about the markets and recommend a fund",                "expected_agent": "market_research",      "expected_entities": {},                "_notes": "multi-intent — primary is market_research"},
+
+    {"query": "AAPL",                                                          "expected_agent": "market_research",      "expected_entities": {"tickers": ["AAPL"]}, "_notes": "single ticker, no verb — default to market research"},
+    {"query": "asml.as",                                                       "expected_agent": "market_research",      "expected_entities": {"tickers": ["ASML.AS"]}},
+    {"query": "abcdefg",                                                       "expected_agent": "general_query",        "expected_entities": {}, "_notes": "gibberish — should not crash, route to general"}
+  ]
+}

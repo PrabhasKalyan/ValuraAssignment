@@ -1,0 +1,57 @@
+{
+  "session_id": "sess_ambiguous_001",
+  "user_id": "usr_001",
+  "description": "Edge cases: typos, slang, vague references, missing parameters. Classifier should be tolerant; safety-guard should not over-trigger.",
+  "test_cases": [
+    {
+      "case_id": "amb_01",
+      "prior_user_turns": [],
+      "current_user_turn": "hows apple doing",
+      "expected": {
+        "agent": "market_research",
+        "entities": {"tickers": ["AAPL"]},
+        "_notes": "informal, no punctuation, partial company name"
+      }
+    },
+    {
+      "case_id": "amb_02",
+      "prior_user_turns": ["hows apple doing"],
+      "current_user_turn": "ok and microsfot?",
+      "expected": {
+        "agent": "market_research",
+        "entities": {"tickers": ["MSFT"]},
+        "_notes": "typo on 'microsoft'; intent carried from prior turn"
+      }
+    },
+    {
+      "case_id": "amb_03",
+      "prior_user_turns": ["hows apple doing", "ok and microsfot?"],
+      "current_user_turn": "tell me about that thing you mentioned earlier",
+      "expected": {
+        "agent": "general_query",
+        "entities": {},
+        "_notes": "ambiguous reference — classifier may request clarification OR resolve from session context"
+      }
+    },
+    {
+      "case_id": "amb_04",
+      "prior_user_turns": [],
+      "current_user_turn": "1500 monthly for 15 years",
+      "expected": {
+        "agent": "financial_calculator",
+        "entities": {"amount": 1500, "frequency": "monthly", "period_years": 15},
+        "_notes": "no rate or currency — calculator may use default OR ask for clarification"
+      }
+    },
+    {
+      "case_id": "amb_05",
+      "prior_user_turns": ["how is my portfolio doing?"],
+      "current_user_turn": "thx",
+      "expected": {
+        "agent": "general_query",
+        "entities": {},
+        "_notes": "polite closer — must NOT trigger any specialist agent or context loading"
+      }
+    }
+  ]
+}

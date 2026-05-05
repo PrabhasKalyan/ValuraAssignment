@@ -1,0 +1,33 @@
+# =============================================================================
+# Valura AI — Team Lead Assignment — Core Dependencies
+# =============================================================================
+# This is the minimal set we ship. Add what you need; justify additions in your README.
+
+# --- Web framework + streaming ---
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+sse-starlette>=1.8.2       # SSE is required by the assignment; this is the path of least resistance
+httpx>=0.27.0              # async HTTP client + TestClient
+
+# --- Validation ---
+pydantic>=2.7.0
+
+# --- LLM ---
+openai>=1.30.0             # OpenAI Python SDK — structured outputs, streaming
+
+# --- Utilities ---
+python-dotenv>=1.0.0
+
+# --- Testing ---
+pytest>=8.2.0
+pytest-asyncio>=0.23.0
+pytest-mock>=3.14.0
+
+# =============================================================================
+# Suggested additions (add only what you actually use):
+#   - yfinance              — easy market data (stretch alternative: an MCP server)
+#   - pandas / numpy        — if your portfolio math gets non-trivial
+#   - asyncpg / aiosqlite   — only if you persist sessions in a real DB
+#   - tenacity              — if you implement retry policies
+#   - cachetools            — if you implement the optional dedupe cache
+# =============================================================================

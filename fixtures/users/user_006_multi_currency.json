@@ -1,0 +1,17 @@
+{
+  "user_id": "usr_006",
+  "name": "Sophia Tan",
+  "age": 38,
+  "country": "SG",
+  "base_currency": "USD",
+  "kyc": {"status": "verified"},
+  "risk_profile": "moderate",
+  "positions": [
+    {"ticker": "AAPL",   "exchange": "NASDAQ",            "quantity": 45,  "avg_cost": 158.20, "currency": "USD", "purchased_at": "2023-10-08"},
+    {"ticker": "VOO",    "exchange": "NYSE",              "quantity": 18,  "avg_cost": 408.20, "currency": "USD", "purchased_at": "2024-03-04"},
+    {"ticker": "ASML.AS","exchange": "EURONEXT_AMSTERDAM","quantity": 8,   "avg_cost": 612.40, "currency": "EUR", "purchased_at": "2024-02-12"},
+    {"ticker": "HSBA.L", "exchange": "LSE",               "quantity": 250, "avg_cost": 6.38,   "currency": "GBP", "purchased_at": "2024-07-22"},
+    {"ticker": "7203.T", "exchange": "TSE",               "quantity": 200, "avg_cost": 2480.00,"currency": "JPY", "purchased_at": "2024-10-15"}
+  ],
+  "preferences": {"preferred_benchmark": "MSCI World", "reporting_currency": "USD"}
+}

@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Safety guard correctness",
+      "setup": "pip install -r requirements.txt",
+      "run": "pytest tests/test_safety_pairs.py -v",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 60,
+      "points": 25
+    },
+    {
+      "name": "Classifier routing accuracy",
+      "setup": "",
+      "run": "pytest tests/test_classifier_routing.py -v",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 120,
+      "points": 30
+    },
+    {
+      "name": "Portfolio Health agent",
+      "setup": "",
+      "run": "pytest tests/test_portfolio_health_skeleton.py -v",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 60,
+      "points": 25
+    },
+    {
+      "name": "Full test suite passes",
+      "setup": "",
+      "run": "pytest tests/ -v",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 180,
+      "points": 20
+    }
+  ]
+}
