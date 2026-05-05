@@ -1,0 +1,87 @@
+{
+  "usr_001": {
+    "user_id": "usr_001",
+    "name": "Alex Chen",
+    "age": 28,
+    "country": "US",
+    "base_currency": "USD",
+    "kyc": {"status": "verified"},
+    "risk_profile": "aggressive",
+    "positions": [
+      {"ticker": "AAPL",  "exchange": "NASDAQ", "quantity": 60, "avg_cost": 142.30, "currency": "USD", "purchased_at": "2023-08-04"},
+      {"ticker": "MSFT",  "exchange": "NASDAQ", "quantity": 40, "avg_cost": 305.10, "currency": "USD", "purchased_at": "2023-09-01"},
+      {"ticker": "NVDA",  "exchange": "NASDAQ", "quantity": 35, "avg_cost": 412.85, "currency": "USD", "purchased_at": "2023-11-15"},
+      {"ticker": "GOOGL", "exchange": "NASDAQ", "quantity": 25, "avg_cost": 132.40, "currency": "USD", "purchased_at": "2023-10-22"},
+      {"ticker": "META",  "exchange": "NASDAQ", "quantity": 20, "avg_cost": 298.50, "currency": "USD", "purchased_at": "2023-12-01"},
+      {"ticker": "AMZN",  "exchange": "NASDAQ", "quantity": 30, "avg_cost": 138.20, "currency": "USD", "purchased_at": "2024-01-08"},
+      {"ticker": "TSLA",  "exchange": "NASDAQ", "quantity": 22, "avg_cost": 245.60, "currency": "USD", "purchased_at": "2024-02-14"},
+      {"ticker": "AMD",   "exchange": "NASDAQ", "quantity": 50, "avg_cost": 118.90, "currency": "USD", "purchased_at": "2024-01-22"},
+      {"ticker": "QQQ",   "exchange": "NASDAQ", "quantity": 30, "avg_cost": 412.40, "currency": "USD", "purchased_at": "2024-11-22"}
+    ],
+    "preferences": {"preferred_benchmark": "QQQ"}
+  },
+  "usr_003": {
+    "user_id": "usr_003",
+    "name": "Marcus Webb",
+    "age": 35,
+    "country": "US",
+    "base_currency": "USD",
+    "kyc": {"status": "verified"},
+    "risk_profile": "moderate",
+    "positions": [
+      {"ticker": "NVDA", "exchange": "NASDAQ", "quantity": 180, "avg_cost": 218.40, "currency": "USD", "purchased_at": "2023-04-12"},
+      {"ticker": "VTI",  "exchange": "NYSE",   "quantity": 25,  "avg_cost": 218.50, "currency": "USD", "purchased_at": "2023-07-04"},
+      {"ticker": "VXUS", "exchange": "NASDAQ", "quantity": 30,  "avg_cost": 56.10,  "currency": "USD", "purchased_at": "2023-09-01"},
+      {"ticker": "BND",  "exchange": "NASDAQ", "quantity": 20,  "avg_cost": 72.30,  "currency": "USD", "purchased_at": "2024-01-15"},
+      {"ticker": "AAPL", "exchange": "NASDAQ", "quantity": 8,   "avg_cost": 168.20, "currency": "USD", "purchased_at": "2024-05-20"}
+    ],
+    "preferences": {"preferred_benchmark": "S&P 500"}
+  },
+  "usr_004": {
+    "user_id": "usr_004",
+    "name": "Jamie Patel",
+    "age": 31,
+    "country": "US",
+    "base_currency": "USD",
+    "kyc": {"status": "verified"},
+    "risk_profile": "moderate",
+    "positions": [],
+    "preferences": {"preferred_benchmark": "S&P 500"}
+  },
+  "usr_006": {
+    "user_id": "usr_006",
+    "name": "Sophia Tan",
+    "age": 38,
+    "country": "SG",
+    "base_currency": "USD",
+    "kyc": {"status": "verified"},
+    "risk_profile": "moderate",
+    "positions": [
+      {"ticker": "AAPL",   "exchange": "NASDAQ",            "quantity": 45,  "avg_cost": 158.20, "currency": "USD", "purchased_at": "2023-10-08"},
+      {"ticker": "VOO",    "exchange": "NYSE",              "quantity": 18,  "avg_cost": 408.20, "currency": "USD", "purchased_at": "2024-03-04"},
+      {"ticker": "ASML.AS","exchange": "EURONEXT_AMSTERDAM","quantity": 8,   "avg_cost": 612.40, "currency": "EUR", "purchased_at": "2024-02-12"},
+      {"ticker": "HSBA.L", "exchange": "LSE",               "quantity": 250, "avg_cost": 6.38,   "currency": "GBP", "purchased_at": "2024-07-22"},
+      {"ticker": "7203.T", "exchange": "TSE",               "quantity": 200, "avg_cost": 2480.00,"currency": "JPY", "purchased_at": "2024-10-15"}
+    ],
+    "preferences": {"preferred_benchmark": "MSCI World", "reporting_currency": "USD"}
+  },
+  "usr_008": {
+    "user_id": "usr_008",
+    "name": "Eleanor Ross",
+    "age": 68,
+    "country": "US",
+    "base_currency": "USD",
+    "kyc": {"status": "verified"},
+    "risk_profile": "conservative",
+    "positions": [
+      {"ticker": "JNJ",  "exchange": "NYSE",   "quantity": 220, "avg_cost": 142.80, "currency": "USD", "purchased_at": "2018-08-10"},
+      {"ticker": "PG",   "exchange": "NYSE",   "quantity": 180, "avg_cost": 92.40,  "currency": "USD", "purchased_at": "2018-11-05"},
+      {"ticker": "KO",   "exchange": "NYSE",   "quantity": 350, "avg_cost": 45.20,  "currency": "USD", "purchased_at": "2019-02-18"},
+      {"ticker": "VYM",  "exchange": "NYSE",   "quantity": 280, "avg_cost": 92.20,  "currency": "USD", "purchased_at": "2021-03-04"},
+      {"ticker": "SCHD", "exchange": "NYSE",   "quantity": 350, "avg_cost": 68.40,  "currency": "USD", "purchased_at": "2021-06-18"},
+      {"ticker": "BND",  "exchange": "NASDAQ", "quantity": 240, "avg_cost": 82.10,  "currency": "USD", "purchased_at": "2021-09-22"},
+      {"ticker": "TLT",  "exchange": "NASDAQ", "quantity": 180, "avg_cost": 142.30, "currency": "USD", "purchased_at": "2022-02-08"}
+    ],
+    "preferences": {"preferred_benchmark": "S&P 500", "income_focus": true}
+  }
+}
