@@ -36,3 +36,5 @@ Thumbs.db
 # Misc
 *.log
 tmp/
+src/portfolio_check/.env
+src/chat_agent/.env
