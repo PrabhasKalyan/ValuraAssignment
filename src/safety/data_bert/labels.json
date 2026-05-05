@@ -1,0 +1,47 @@
+{
+  "labels": [
+    "insider_trading_op",
+    "insider_trading_edu",
+    "market_manipulation_op",
+    "market_manipulation_edu",
+    "money_laundering_op",
+    "money_laundering_edu",
+    "guaranteed_returns_op",
+    "guaranteed_returns_edu",
+    "reckless_advice_op",
+    "reckless_advice_edu",
+    "sanctions_evasion_op",
+    "sanctions_evasion_edu",
+    "general"
+  ],
+  "label2id": {
+    "insider_trading_op": 0,
+    "insider_trading_edu": 1,
+    "market_manipulation_op": 2,
+    "market_manipulation_edu": 3,
+    "money_laundering_op": 4,
+    "money_laundering_edu": 5,
+    "guaranteed_returns_op": 6,
+    "guaranteed_returns_edu": 7,
+    "reckless_advice_op": 8,
+    "reckless_advice_edu": 9,
+    "sanctions_evasion_op": 10,
+    "sanctions_evasion_edu": 11,
+    "general": 12
+  },
+  "id2label": {
+    "0": "insider_trading_op",
+    "1": "insider_trading_edu",
+    "2": "market_manipulation_op",
+    "3": "market_manipulation_edu",
+    "4": "money_laundering_op",
+    "5": "money_laundering_edu",
+    "6": "guaranteed_returns_op",
+    "7": "guaranteed_returns_edu",
+    "8": "reckless_advice_op",
+    "9": "reckless_advice_edu",
+    "10": "sanctions_evasion_op",
+    "11": "sanctions_evasion_edu",
+    "12": "general"
+  }
+}
