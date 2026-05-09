@@ -363,4 +363,4 @@ How:
 
 ## 11. Defence video
 
-`<video link to be added on final commit>`
+`https://drive.google.com/file/d/1HTFUg_gLp3Z05JWBcSAVWewyzeS642f4/view?usp=sharing`
